@@ -3,8 +3,7 @@
 // config['routes'] liste les actions legales
 // et le sous-controllers correspondant
 $config['routes'] = array(
-	"home"	=> "home",
-	
+	"home"	=> "home"
 );
 
 //on defini la racine
