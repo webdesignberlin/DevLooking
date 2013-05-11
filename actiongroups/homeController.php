@@ -30,13 +30,19 @@ if($action = 'home'){//home
                 var_dump($result['access_token']);
                 var_dump($result['token_type']);
 
-                $context = stream_context_create(array('http' => array('header' => 'Host: www.dev-looking.me')));
+                $opts = array(
+                    'http'=>array(
+                        'method'=>"GET",
+                        'header'=>"Accept-language: en\r\n" .
+                            "Cookie: foo=bar\r\n"
+                    )
+                );
 
-                $url = 'https://api.github.com/user?access_token='.$result['access_token'];
+                $context = stream_context_create($opts);
 
-                $data = json_decode(file_get_contents($url, 0, $context));
+                $file = file_get_contents('https://api.github.com/user?access_token='.$result['access_token'], false, $context);
 
-                var_dump($data);
+                
             }
         }
 
