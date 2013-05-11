@@ -58,6 +58,9 @@ else if($action == 'connect'){//home
     $tpl = 'home';
 }
 else if($action == 'signout'){
+    session_destroy();
+    session_start();
+    header('Location: index.php');
 
     $tpl = 'home';
 }

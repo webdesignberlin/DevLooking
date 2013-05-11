@@ -22,26 +22,26 @@
 				</ul>
 			</div>
 
-			<form action="">
+			<form action="index.php?action=create" method="POST">
 				
 				<div>
 					<label for="project-name">Project name</label>
-					<input type="text" id="project-name">
+					<input type="text" id="project-name" name="name">
 				</div>
 
 				<div>
 					<label for="project-image">Choose a picture</label>
-					<input type="file" id="project-image">
+					<input type="file" id="project-image" name="image">
 				</div>
 
 				<div class="textarea">
 					<label for="project-description">Enter a description</label>
-					<textarea id="project-description"></textarea>
+					<textarea id="project-description" name="description">></textarea>
 				</div>
 
 				<div>
 					<label for="project-technology">Technology use</label>
-					<select id="project-technology">
+					<select id="project-technology"  name="technology">>
 						<option>HTML5</option>
 						<option>CSS3</option>
 					</select>
@@ -49,7 +49,7 @@
 
 				<div>
 					<label for="project-search">People you are looking for</label>
-					<select id="project-search">
+					<select id="project-search" name="search">>
 						<option>Front-End developer</option>
 					</select>
 				</div>
