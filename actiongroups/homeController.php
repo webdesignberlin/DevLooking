@@ -44,10 +44,10 @@ else if($action == 'connect'){//home
         $id = $user['id'];
 
         if(!verifyUser($id)){
-            registerUser($user);
+            $user['score'] = registerUser($user);
         }
         else{
-            updateUser($user);
+            $user['score'] = updateUser($user);
         }
 
         connectUser($user);
