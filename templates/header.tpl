@@ -8,9 +8,6 @@
                     <li><a href="index.php?action=create">Create a project</a></li>
                 {/if}
                 <li><a href="index.php?action=browse">Browse projects</a></li>
-                {if isset($session) & !empty($session)}
-                    <li><a href="index.php?action=signout">Sign out</a></li>
-                {/if}
             </ul>
         </nav>
 
