@@ -142,6 +142,23 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 #main-header nav li:last-child { border-right: 1px solid #616466; }
 #main-header nav li:hover { background: #4f5556; }
 
+/* Account */
+#main-header .right li {
+	line-height: 55px;
+}
+#main-header .right li img {
+	margin-top: 8px;
+	width: 40px;
+	height: 40px;
+
+	-webkit-border-radius: 100%;
+	   -moz-border-radius: 100%;
+		-ms-border-radius: 100%;
+		 -o-border-radius: 100%;
+			border-radius: 100%;
+}
+
+
 /* Btn GitHub */
 #main-header .btn-github {
 	margin-top: 10px;

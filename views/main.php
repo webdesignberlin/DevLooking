@@ -9,6 +9,7 @@
 	<title></title>
 	
 	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="stylesheet" href="./styles/select2.css">
 
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Roboto+Slab:400,700" rel="stylesheet">
 
@@ -37,6 +38,9 @@
 	?>
 
 	<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="./js/select2.min.js"></script>
+
 	<script type="text/javascript" src="./js/script.js"></script>
+
 </body>
 </html>
