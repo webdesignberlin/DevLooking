@@ -4,6 +4,7 @@
 // et le sous-controllers correspondant
 $config['routes'] = array(
 	"home"	=> "home",
+	"create" => "create",
 	
 );
 

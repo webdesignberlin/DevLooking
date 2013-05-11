@@ -14,7 +14,7 @@
 	</div>
 </header>
 
-<section id="main-content">
+<div id="content">
 	<div class="grid">
 	
 		<header id="title">
@@ -113,4 +113,4 @@
 		</article>
 
 	</div>
-</section>
+</div>
