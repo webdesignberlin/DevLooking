@@ -1,5 +1,7 @@
 <?php
 
+include('./models/homeModel.php');
+
 if($action = 'home'){//home
 
     //Github connect callback 1
@@ -30,19 +32,9 @@ if($action = 'home'){//home
                 var_dump($result['access_token']);
                 var_dump($result['token_type']);
 
-                $opts = array(
-                    'http'=>array(
-                        'method'=>"GET",
-                        'header'=>"Accept-language: en\r\n" .
-                            "Cookie: foo=bar\r\n"
-                    )
-                );
+                signup_github();
 
-                $context = stream_context_create($opts);
 
-                $file = file_get_contents('https://api.github.com/user?access_token='.$result['access_token'], false, $context);
-
-                
             }
         }
 
