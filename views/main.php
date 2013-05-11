@@ -10,7 +10,7 @@
 	
 	<link rel="stylesheet" href="./styles/style.css">
 
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Roboto+Slab:400,700" rel="stylesheet">
 
 	<link rel="shortcut icon" href="favicon.ico">
 	

@@ -101,6 +101,7 @@ body {
 strong { font-weight: 600; }
 em { font-style: italic; }
 sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
+.clear { clear: both; }
 
 /* Grid classes */
 .left { float: left; }
@@ -109,12 +110,177 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
-/* ------------------- Global styles ------------------- */
+/* -------------------- Main header -------------------- */
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
 
 #main-header {
-	
+	width: 100%;
+	height: 55px;
+	background: #323738;
 }
 
+/* Logo */
+#main-header h1 img {
+	margin-top: 6px;
+	margin-right: 20px;
+}
+
+/* Nav */
+#main-header nav li {
+	display: inline-block;
+	line-height: 55px;
+	border-left: 1px solid #616466;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-right: -4px;
+}
+#main-header nav li a {
+	display: block;
+	color: #ebebeb;
+	text-decoration: none;
+}
+#main-header nav li:last-child { border-right: 1px solid #616466; }
+#main-header nav li:hover { background: #4f5556; }
+
+/* Btn GitHub */
+#main-header .btn-github {
+	margin-top: 10px;
+	display: block;
+	background: #36a3d9;
+	color: #fff;
+	width: 180px;
+	height: 35px;
+	line-height: 35px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 14px;
+
+	-webkit-border-radius: 28px;
+	   -moz-border-radius: 28px;
+		-ms-border-radius: 28px;
+		 -o-border-radius: 28px;
+			border-radius: 28px;
+}
+#main-header .btn-github:hover,
+#main-header .btn-github:focus {
+	background: #4ab0e2;
+}
+#main-header .btn-github:active {
+	position: relative;
+	top: 1px;
+}
+
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+/* ------------------- Main content -------------------- */
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+
+/* Pre header */
+#title {
+	margin: 60px 0;
+	padding-bottom: 60px;
+	border-bottom: 1px solid #aaafb3;
+}
+
+/* Title */
+#title h2 {
+	font: 700 42px/50px "Roboto Slab", sans-serif;
+	color: #323738;
+}
+
+/* Select */
+#title select {
+	width: 200px;
+	height: 30px;
+	margin-top: 10px;
+}
+
+/* Article project */
+.project-thumb {
+	position: relative;
+	background: #fff;
+	width: 100%;
+	height: 185px;
+	margin-bottom: 40px;
+	padding: 8px;
+
+	-webkit-box-shadow: 0 2px #ebebeb, 0 3px 2px rgba(0, 0, 0, .3);
+	   -moz-box-shadow: 0 2px #ebebeb, 0 3px 2px rgba(0, 0, 0, .3);
+		-ms-box-shadow: 0 2px #ebebeb, 0 3px 2px rgba(0, 0, 0, .3);
+		 -o-box-shadow: 0 2px #ebebeb, 0 3px 2px rgba(0, 0, 0, .3);
+			box-shadow: 0 2px #ebebeb, 0 3px 2px rgba(0, 0, 0, .3);
+
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+		-ms-border-radius: 4px;
+		 -o-border-radius: 4px;
+			border-radius: 4px;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		 -o-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+/* Inner styles */
+.project-thumb img { margin-right: 10px; }
+
+.project-thumb h3 {
+	color: #323738;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.project-thumb li {
+	display: inline-block;
+	font-size: 14px;
+	color: #616466;
+	margin-bottom: 15px;
+	padding: 2px 8px;
+	background: #ebebeb;
+	margin-right: 10px;
+
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+		-ms-border-radius: 4px;
+		 -o-border-radius: 4px;
+			border-radius: 4px;
+}
+
+.project-thumb p {
+	width: 90%;
+	color: #616466;
+	font-size: 14px;
+}
+
+.project-thumb .apply {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #36d96c;
+	width: 65px;
+	height: 100%;
+	text-decoration: none;
+	color: #fff;
+	font-weight: 900;
+	font-size: 60px;
+	text-align: center;
+	line-height: 185px;
+
+	-webkit-border-radius: 0 4px 4px 0;
+	   -moz-border-radius: 0 4px 4px 0;
+		-ms-border-radius: 0 4px 4px 0;
+		 -o-border-radius: 0 4px 4px 0;
+			border-radius: 0 4px 4px 0;
+}
+.project-thumb .apply:hover,
+.project-thumb .apply:focus {
+	background: #53e583;
+}
