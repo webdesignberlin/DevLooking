@@ -7,5 +7,4 @@
     }
     //-- NAMESPACE --//
 
-
-})(JQuery);
+})(jQuery);

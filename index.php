@@ -6,6 +6,7 @@ session_start();
 include('./includes/config.php');
 include('./includes/tools.php');
 
+
 //Valeur d'action par defaut
 $action = $config['defaults']['action'];
 
