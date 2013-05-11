@@ -1,10 +1,12 @@
 <?php
 //-- MYSQL CONNECT --//
+/*
 $link = mysqli_connect('localhost', 'root', '', 'aero');//dont look my password :O
 mysqli_query($link, "SET NAMES 'utf8'");
 if($link == false){
     die(mysqli_connect_error());
 }
+*/
 //-- MYSQL CONNECT --//
 
 //-- DATABASE SQL --//
