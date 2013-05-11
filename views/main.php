@@ -27,6 +27,7 @@
     $tpl_path = 'templates/'.$tpl.'.tpl';
 
     if (is_file($tpl_path)){
+        $smarty->display('templates/header.tpl');
         $smarty->display($tpl_path);
     }
     else{

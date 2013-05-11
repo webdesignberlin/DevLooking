@@ -57,6 +57,10 @@ else if($action == 'connect'){//home
 
     $tpl = 'home';
 }
+else if($action == 'signout'){
+
+    $tpl = 'home';
+}
 else{//default or undefined
     //stuff
     $tpl = 'home';

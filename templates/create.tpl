@@ -1,19 +1,3 @@
-<header id="main-header">
-	<div class="grid">
-		<h1 class="left"><a href="./"><img src="images/logo.png" alt=""></a></h1>
-
-		<nav class="left">
-			<ul>
-				<li><a href="">Create a project</a></li>
-				<li><a href="">Browse projects</a></li>
-			</ul>
-		</nav>
-
-		<a class="btn-github right" href="https://github.com/login/oauth/authorize?client_id=e66e6ec9c7f680faf807">Connect with github</a>
-
-	</div>
-</header>
-
 <div id="content">
 	<div class="grid">
 		<header id="title">

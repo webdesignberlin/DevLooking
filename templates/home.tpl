@@ -1,23 +1,3 @@
-<header id="main-header">
-	<div class="grid">
-		<h1 class="left"><a href="./"><img src="images/logo.png" alt=""></a></h1>
-
-		<nav class="left">
-			<ul>
-				<li><a href="">Create a project</a></li>
-				<li><a href="">Browse projects</a></li>
-			</ul>
-		</nav>
-
-        {if isset($session)}
-            <div>Hi, {$session.login}<img src="{$session.avatar_url}" alt="avatar"/></div>
-        {else}
-            <a class="btn-github right" href="http://localhost/Dropbox/Dev%20Looking/index.php?action=connect">Connect with github</a>
-        {/if}
-
-	</div>
-</header>
-
 <div id="content">
 	<div class="grid">
 	
