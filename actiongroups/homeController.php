@@ -2,10 +2,10 @@
 
 include('./models/homeModel.php');
 
-if($action = 'home'){
+if($action == 'home'){
     $view = 'home';
 }
-else if($action = 'connect'){//home
+else if($action == 'connect'){//home
 
     $client = new oauth_client_class;
     $client->debug = 0;
@@ -20,11 +20,7 @@ else if($action = 'connect'){//home
 
     if(strlen($client->client_id) == 0
         || strlen($client->client_secret) == 0)
-        die('Please go to Scoop.it Apps page https://www.scoopit.com/developers/apps , '.
-            'create an application, and in the line '.$application_line.
-            ' set the client_id to Consumer key and client_secret with Consumer secret. '.
-            'The Callback URL must be '.$client->redirect_uri).' Make sure this URL is '.
-            'not in a private network and accessible to the Scoop.it site.';
+        die('fail');
 
     if(($success = $client->Initialize()))
     {
@@ -43,9 +39,22 @@ else if($action = 'connect'){//home
         exit;
     if($success)
     {
+        $user = get_object_vars($user);
 
-    var_dump(get_object_vars($user));
+        $id = $user['id'];
+
+        if(!verifyUser($id)){
+            registerUser($user);
+        }
+        else{
+            updateUser($user);
+        }
+
+        connectUser($user);
     }
+
+    header('Location: index.php');
+
     $view = 'home';
 }
 else{//default or undefined

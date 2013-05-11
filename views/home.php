@@ -9,7 +9,7 @@
 			</ul>
 		</nav>
 
-		<a class="btn-github right" href="https://github.com/login/oauth/authorize?client_id=e66e6ec9c7f680faf807">Connect with github</a>
+		<a class="btn-github right" href="http://localhost/Dropbox/Dev%20Looking/index.php?action=connect">Connect with github</a>
 
 	</div>
 </header>
