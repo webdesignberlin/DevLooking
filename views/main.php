@@ -39,14 +39,8 @@
 
 	<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="./js/select2.min.js"></script>
-	
-	<script type="text/javascript" src="./js/script.js"></script>
 
-	<script id="script_e23">
-		$("#e13").select2();
-		// $("#e13_ca").click(function() { $("#e13").val("CA").trigger("change"); });
-		// $("#e13_ak_co").click(function() { $("#e13").val(["AK","CO"]).trigger("change"); });
-	</script>
+	<script type="text/javascript" src="./js/script.js"></script>
 
 </body>
 </html>
