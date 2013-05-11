@@ -55,6 +55,10 @@ function emailCheck($email){
 }
 //-- EMAIL CHECK --//
 
+//-- UPLOAD --//
+
+//-- UPLOAD --//
+
 //-- PASSWORD HASH --//
 function passwordHash($password){
 

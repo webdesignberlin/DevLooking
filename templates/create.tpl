@@ -22,11 +22,19 @@
 				</ul>
 			</div>
 
-			<form action="index.php?action=create" method="POST">
+            {if isset($empty)}
+                <span class="error">All inputs must be filled</span>
+            {/if}
+
+            <form action="index.php?action=create" method="POST" enctype="multipart/form-data">
 
 				<div>
-					<label for="project-name">Project name</label>
-					<input class="input-form" type="text" id="project-name" name="name">
+					<label for="project-name">Project name
+                        {if isset($error.name)}
+                            <span class="error">{($error.name)}</span>
+                        {/if}
+                    </label>
+					<input class="input-form" type="text" id="project-name" name="name" value="{if isset($data.name)}{($data.name)}{/if}">
 				</div>
 
 				<div>
@@ -35,8 +43,12 @@
 				</div>
 
 				<div class="textarea">
-					<label for="project-description">Enter a description</label>
-					<textarea class="input-form" id="project-description" name="description"></textarea>
+					<label for="project-description">Enter a description
+                        {if isset($error.description)}
+                            <span class="error">{($error.description)}</span>
+                        {/if}
+                    </label>
+					<textarea class="input-form" id="project-description" name="description">{if isset($data.description)}{($data.description)}{/if}</textarea>
 				</div>
 
 				<div>
