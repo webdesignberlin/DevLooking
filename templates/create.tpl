@@ -22,7 +22,20 @@
 
 		<section id="main-content">
 			<div class="top">
-				
+				<ul>
+					<li class="step-1">
+						<div class="step-circle grey">1</div>
+						<p>Create your project</p>
+					</li>
+					<li class="step-2">
+						<div class="step-circle grey">2</div>
+						<p>Share your project page</p>
+					</li>
+					<li class="step-3">
+						<div class="step-circle blue">3</div>
+						<p>And it's done!</p>
+					</li>
+				</ul>
 			</div>
 
 			<form action="">
@@ -34,10 +47,10 @@
 
 				<div>
 					<label for="project-image">Choose a picture</label>
-					<input type="upload" id="project-image">
+					<input type="file" id="project-image">
 				</div>
 
-				<div>
+				<div class="textarea">
 					<label for="project-description">Enter a description</label>
 					<textarea id="project-description"></textarea>
 				</div>
@@ -57,14 +70,7 @@
 					</select>
 				</div>
 
-
-
-				description, image, techno, developpeur recherché
-
-				<div>
-					<label for=""></label>
-					<input type="text">
-				</div>
+				<!-- description, image, techno, developpeur recherché -->
 
 				<div>
 					<input type="hidden">
@@ -75,3 +81,7 @@
 		</section>
 	</div>
 </div>
+
+<footer id="main-footer">
+	
+</footer>
