@@ -26,7 +26,7 @@
 
 				<div>
 					<label for="project-name">Project name</label>
-					<input type="text" id="project-name" name="name">
+					<input class="input-form" type="text" id="project-name" name="name">
 				</div>
 
 				<div>
@@ -36,12 +36,12 @@
 
 				<div class="textarea">
 					<label for="project-description">Enter a description</label>
-					<textarea id="project-description" name="description"></textarea>
+					<textarea class="input-form" id="project-description" name="description"></textarea>
 				</div>
 
 				<div>
 					<label for="project-technology">Technology use</label>
-					<select id="project-technology" multiple style="width:600px" name="technology[]">
+					<select id="project-technology" multiple style="width:450px" name="technology[]">
 						<option value="11">ABSYS</option>
 							<option value="12">Abundance</option>
 							<option value="13">ACC</option>
@@ -1189,7 +1189,7 @@
 
 				<div>
 					<label for="project-search">People you are looking for</label>
-					<select id="project-search" multiple style="width:600px" name="search[]">
+					<select id="project-search" multiple style="width:450px" name="search[]">
 						<option>Front-End developer</option>
 					</select>
 				</div>

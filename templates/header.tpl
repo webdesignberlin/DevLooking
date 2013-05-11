@@ -15,12 +15,16 @@
         </nav>
 
         {if isset($session) & !empty($session)}
-        <div class="right">
-            <ul>
-                <li><img src="{$session.avatar_url}" alt="avatar"> Hi, {$session.login}</li>
-            </ul>
-        </div>
+            <div class="right">
+                <a class="account" href="">
+                    <img src="{$session.avatar_url}" alt="avatar">
+                    Hi, {$session.login}!
+                </a>
 
+                <a class="logout" href="index.php?action=signout">
+                    <img src="images/logout.png" alt="">
+                </a>
+            </div>
         {else}
             <a class="btn-github right" href="http://localhost/Dropbox/Dev%20Looking/index.php?action=connect">Connect with github</a>
         {/if}
