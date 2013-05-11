@@ -1,5 +1,9 @@
 <header id="main-header">
-	
+	<div class="grid">
+		<h1><a href=""><img src="" alt=""></a></h1>
+
+
+	</div>
 </header>
 
 
