@@ -2,45 +2,50 @@
 
 include('./models/homeModel.php');
 
-if($action = 'home'){//home
+if($action = 'home'){
+    $view = 'home';
+}
+else if($action = 'connect'){//home
 
-    //Github connect callback 1
-    if(!empty($_GET['code'])){
+    $client = new oauth_client_class;
+    $client->debug = 0;
+    $client->debug_http = 1;
+    $client->server = 'github';
+    $client->redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].
+        dirname(strtok($_SERVER['REQUEST_URI'],'?')).'/index.php';
 
-        $postdata = http_build_query(
-            array(
-                'client_id' => 'e66e6ec9c7f680faf807',
-                'client_secret' => '4f03720300d8c6df5a02afcd27488afd4fdc5602',
-                'code' => $_GET['code']
-            )
-        );
+    $client->client_id = 'e66e6ec9c7f680faf807';
+    $application_line = __LINE__;
+    $client->client_secret = '4f03720300d8c6df5a02afcd27488afd4fdc5602';
 
-        $opts = array('http' =>
-            array(
-                'method'  => 'POST',
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\nAccept: application/json",
-                'content' => $postdata
-            )
-        );
+    if(strlen($client->client_id) == 0
+        || strlen($client->client_secret) == 0)
+        die('Please go to Scoop.it Apps page https://www.scoopit.com/developers/apps , '.
+            'create an application, and in the line '.$application_line.
+            ' set the client_id to Consumer key and client_secret with Consumer secret. '.
+            'The Callback URL must be '.$client->redirect_uri).' Make sure this URL is '.
+            'not in a private network and accessible to the Scoop.it site.';
 
-        $context  = stream_context_create($opts);
-
-        $result = json_decode(file_get_contents('https://github.com/login/oauth/access_token', false, $context), true);
-
-        if(empty($result['error'])){//no error
-            if(!empty($result['access_token']) && !empty($result['token_type'])){//success
-                var_dump($result['access_token']);
-                var_dump($result['token_type']);
-
-                signup_github();
-
-
+    if(($success = $client->Initialize()))
+    {
+        if(($success = $client->Process()))
+        {
+            if(strlen($client->access_token))
+            {
+                $success = $client->CallAPI(
+                    'https://api.github.com/user',
+                    'GET', array(), array('FailOnAccessError'=>true), $user);
             }
         }
-
-
+        $success = $client->Finalize($success);
     }
+    if($client->exit)
+        exit;
+    if($success)
+    {
 
+    var_dump(get_object_vars($user));
+    }
     $view = 'home';
 }
 else{//default or undefined
