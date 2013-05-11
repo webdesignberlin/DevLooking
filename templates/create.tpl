@@ -34,7 +34,7 @@
                             <span class="error">{($error.name)}</span>
                         {/if}
                     </label>
-					<input type="text" id="project-name" name="name" value="{if isset($data.name)}{($data.name)}{/if}">
+					<input class="input-form" type="text" id="project-name" name="name" value="{if isset($data.name)}{($data.name)}{/if}">
 				</div>
 
 				<div>
@@ -43,19 +43,18 @@
 				</div>
 
 				<div class="textarea">
-
 					<label for="project-description">Enter a description
                         {if isset($error.description)}
                             <span class="error">{($error.description)}</span>
                         {/if}
                     </label>
-					<textarea id="project-description" name="description">{if isset($data.description)}{($data.description)}{/if}</textarea>
+					<textarea class="input-form" id="project-description" name="description">{if isset($data.description)}{($data.description)}{/if}</textarea>
 
 				</div>
 
 				<div>
 					<label for="project-technology">Technology use</label>
-					<select id="project-technology" multiple style="width:600px" name="technology[]">
+					<select id="project-technology" multiple style="width:450px" name="technology[]">
 						<option value="11">ABSYS</option>
                             <option value="1">PHP</option>
                             <option value="2">HTML</option>
