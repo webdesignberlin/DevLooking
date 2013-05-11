@@ -23,14 +23,15 @@
 <body>
 	<?php
 
-		$view_path = 'views/'.$view.'.php';
+    //On inclu le template
+    $tpl_path = 'templates/'.$tpl.'.tpl';
 
-		if (is_file($view_path)){
-			include($view_path);
-		}
-		else{
-			echo "Page introuvable ('".$view_path."' inexistant ou innaccessible)";
-		}
+    if (is_file($tpl_path)){
+        $smarty->display($tpl_path);
+    }
+    else{
+        echo "Page introuvable ('".$tpl_path."' inexistant ou innaccessible)";
+    }
 
 	?>
 

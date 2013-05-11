@@ -4,11 +4,11 @@ include('./models/createModel.php');
 
 if($action = 'create'){//home
 
-    $view = 'create';
+    $tpl = 'create';
 }
 else{//default or undefined
     //stuff
-    $view = 'home';
+    $tpl = 'home';
 }
 
 ?>

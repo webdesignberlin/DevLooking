@@ -9,7 +9,11 @@
 			</ul>
 		</nav>
 
-		<a class="btn-github right" href="http://localhost/Dropbox/Dev%20Looking/index.php?action=connect">Connect with github</a>
+        {if isset($session)}
+            <div>Hi, {$session.login}<img src="{$session.avatar_url}" alt="avatar"/></div>
+        {else}
+            <a class="btn-github right" href="http://localhost/Dropbox/Dev%20Looking/index.php?action=connect">Connect with github</a>
+        {/if}
 
 	</div>
 </header>
