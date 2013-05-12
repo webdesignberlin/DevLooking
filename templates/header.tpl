@@ -4,9 +4,6 @@
 
         <nav class="left">
             <ul>
-                {if isset($session) & !empty($session)}
-                    <li><a href="index.php?action=create">Create a project</a></li>
-                {/if}
                 <li><a href="index.php?action=browse">Browse Users</a></li>
             </ul>
         </nav>

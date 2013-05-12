@@ -47,7 +47,7 @@
                 {/foreach}
             </ul>
         {else}
-            Nothing found :(
+            <div class="error">Nothing found :(</div>
         {/if}
     </div>
 </div>
