@@ -21,9 +21,17 @@
 
 			<ul class="info">
 				<span>Few informations</span>
-				<li class="mail">{$data.email}</li>
-				<li class="company">{$data.company}</li>
-				<li class="location">{$data.location}</li>
+				{if !empty($data.email)}
+					<li class="mail">{$data.email}</li>
+				{/li}
+
+				{if !empty($data.company)}
+					<li class="company">{$data.company}</li>
+				{/li}
+
+				{if !empty($data.location)}
+					<li class="location">{$data.location}</li>
+				{/li}
 			</ul>
 
 			<div class="main-score">

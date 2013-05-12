@@ -594,7 +594,7 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 .main-score {
 	margin-top: 40px;
 	display: inline-block;
-	width: 40%;
+	width: 20%;
 	border-top: 2px solid #2e3133;
 	color: #2e3133;
 	font-size: 120px;
