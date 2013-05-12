@@ -98,18 +98,14 @@
                 $rs += ($ar['size'] * 2);
                 $rs += ($ar['forks_count'] * 345);
                 $rs += ($ar['watchers'] * 310);
+                $rs += ($ar['open_issues_count'] * -20);
+                if($ar['has_downloads']){
+                    $rs += 400;
+                }
+                if($ar['has_wiki']){
+                    $rs += 350;
+                }
             }
-
-            $rs += ($ar['open_issues_count'] * -20);
-
-            if($ar['has_downloads']){
-                $rs += 400;
-            }
-
-            if($ar['has_wiki']){
-                $rs += 350;
-            }
-
 
             if(!in_array($ar['language'], $lan)){
                 $resultLan[$ar['language']] = 1;
