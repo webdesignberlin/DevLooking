@@ -1,6 +1,5 @@
 <?php
 if($action == 'user'){
-
     $tpl = 'user';
 
 }
