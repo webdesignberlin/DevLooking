@@ -19,8 +19,9 @@
 				{/if}
 			</div>
 
+			{if !empty($data.email) & !empty($data.company) & !empty($data.location)}
 			<ul class="info">
-				<span>Few informations</span>
+				<span class="sub-title">Few informations</span>
 				{if !empty($data.email)}
 					<li class="mail">{$data.email}</li>
 				{/if}
@@ -33,10 +34,12 @@
 					<li class="location">{$data.location}</li>
 				{/if}
 			</ul>
+			{/if}
 
 			<div class="main-score">
 				<span>Score global
 
+					<strong>
                     {if $data.score > 200000}
                         Master
                     {elseif $data.score > 100000}
@@ -54,7 +57,7 @@
                     {elseif $data.score > 1000}
                         Newbie
                     {/if}
-
+					</strong>
 
                 </span>
                 {$data.score}
@@ -75,13 +78,13 @@
                 {$data.external_score}
 			</div>
 
-            <div>
-                <span>Languages Score</span>
+            <div class="langage">
+                <span class="sub-title">Languages Score</span>
 
                 {if count($data.lan) > 1}
-                    <canvas id="pielan" width="400" height="400"></canvas>
+                    <canvas class="left" id="pielan" width="400" height="400"></canvas>
 
-                    <ul id="language-list">
+                    <ul id="language-list" class="right">
                         {foreach $data.lan as $la}
                             {if empty($la@key)}
                                 <li>Other</li>
@@ -92,9 +95,10 @@
                     </ul>
                 {else}
                     {foreach $data.lan as $la}
-                        <p>100% {$la@key}</p>
+                        <p id="only-lan">100% <span>{$la@key}</span></p>
                     {/foreach}
                 {/if}
+                <div class="clear"></div>
             </div>
 
 		</section>
@@ -102,9 +106,10 @@
 	</div>
 </div>
 
-{if count($data.lan) > 1}
     <script>
         $(document).ready(function() {
+        	{if count($data.lan) > 1}
+
             var data = [
                 {foreach $data.lan as $la}
                     {if $la@last}
@@ -127,6 +132,8 @@
             {literal}
                 new Chart(ctx).PolarArea(data, {animation : false});
             {/literal}
+
+            {/if}
             function getColor(language){
                 var r;
                 switch(language){
@@ -217,6 +224,8 @@
             $('#language-list li').each(function() {
                 $(this).css('backgroundColor', getColor($(this).html()))
             });
+
+            $('#only-lan').css('backgroundColor', getColor($('#only-lan').find('span:first').html()));
+
         });
     </script>
-{/if}

@@ -4,12 +4,12 @@
         <header id="title">
             <h2 class="left">Browse Users</h2>
 
-            <form action="./index.php?action=browse" method="POST">
-                <select name="query-type">
+            <form class="" action="./index.php?action=browse" method="POST">
+                <select class="input-form" name="query-type">
                     <option value="lan">Language</option>
                     <option value="lan">Language</option>
                 </select>
-                <input type="text" value="" name="query">
+                <input class="input-form" type="text" value="" name="query">
                 <input type="submit" value="Go">
             </form>
 
@@ -20,6 +20,10 @@
             {foreach $datas as $data}
             <li>
                 <img src="{$data.avatar_url}" alt="">
+                {if !empty($data.name)}
+                    <h2>{$data.name}</h2>
+                {/if}
+
                 <h3>{$data.login}</h3>
                 <ul>
                     {foreach $data.lan as $la}
@@ -32,7 +36,10 @@
 
                     {/foreach}
                 </ul>
-                <p>{$data.score}</p>
+                <div class="user-browse-score">
+                    <h3>Global score</h3>
+                    <span>{$data.score}</span>
+                </div>
                 <a href="index.php?action=user&user={$data.id}" class="apply">View more</a>
             </li>
             {/foreach}
