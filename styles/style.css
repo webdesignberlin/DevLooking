@@ -508,6 +508,132 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 	top: 1px;
 }
 
+/* User page */
+.user #main-content { margin-top: 60px; }
+
+.user .top {
+	position: relative;
+	color: #ebebeb;
+}
+
+.user .green { background: #36d96c; }
+
+.user .avatar-user {
+	margin: 20px 0 0 20px;
+	width: 100px;
+
+	-webkit-border-radius: 100%;
+	   -moz-border-radius: 100%;
+		-ms-border-radius: 100%;
+		 -o-border-radius: 100%;
+			border-radius: 100%;
+}
+
+.user .top .left { margin-left: 20px; }
+.user .top .hireme { margin-right: 20px !important; }
+
+.user h2 {
+	font: 700 24px/30px "Roboto Slab", sans-serif;
+	margin-top: 35px;
+	margin-bottom: 10px;
+}
+.user h2 a {
+	text-decoration: none;
+	color: #ebebeb;
+}
+
+.user h2 a:hover { text-decoration: underline; }
+
+/* infos */
+.info {
+	width: 86%;
+	margin: auto;
+	font-size: 18px;
+	font-weight: 600;
+	color: #323738;
+}
+
+.info span {
+	font-weight: 400;
+	display: block;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #2e3133;
+}
+
+.info li {
+	display: inline-block;
+	vertical-align: middle;
+}
+.info .mail {
+	height: 36px;
+	background: url(../images/user-mail.png) no-repeat;
+	padding-top: 8px;
+	padding-left: 70px;
+	margin-right: 100px;
+}
+
+.info .company {
+	height: 60px;
+	background: url(../images/company-user.png) no-repeat;
+	padding-top: 20px;
+	padding-left: 70px;
+	margin-right: 100px;
+}
+
+.info .location {
+	height: 56px;
+	background: url(../images/location-user.png) no-repeat;
+	padding-top: 15px;
+	padding-left: 70px;
+}
+
+/* stat */
+.user-stat,
+.main-score {
+	margin-top: 40px;
+	display: inline-block;
+	width: 40%;
+	border-top: 2px solid #2e3133;
+	color: #2e3133;
+	font-size: 120px;
+	line-height: 140px;
+	font-weight: 700;
+	text-align: right;
+}
+
+.user-stat span,
+.main-score span {
+	margin-top: 20px;
+	display: block;
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: 400;
+}
+
+.main-score {
+	display: block;
+	width: 86%;
+	margin: 60px auto 0;
+	color: #36a3d9;
+	font-size: 180px;
+	line-height: 200px;
+	text-align: right;
+}
+
+.main-score span {
+	color: #2e3133;
+	font-size: 22px;
+	line-height: 24px;
+}
+
+.stat-1 {
+	margin-left: 6%;
+	margin-right: 6%;
+	margin-bottom: 40px;
+}
+
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */

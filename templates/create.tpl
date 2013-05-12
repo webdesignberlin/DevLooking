@@ -91,7 +91,7 @@
 
 				<div>
 					<label for="project-search">People you are looking for</label>
-					<select id="project-search" multiple style="width:600px" name="search[]">
+					<select id="project-search" multiple style="width:450px" name="search[]">
                         <option value="1">Front-End developer</option>
                         <option value="2">Back-End developer</option>
                         <option value="3">Hacker</option>

@@ -7,7 +7,8 @@ $config['routes'] = array(
     "connect" => "home",
     "signout" => "home",
 	"create" => "create",
-    "browse" => "browse"
+    "browse" => "browse",
+    "user" => "user"
 
 );
 
