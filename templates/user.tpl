@@ -23,15 +23,15 @@
 				<span>Few informations</span>
 				{if !empty($data.email)}
 					<li class="mail">{$data.email}</li>
-				{/li}
+				{/if}
 
 				{if !empty($data.company)}
 					<li class="company">{$data.company}</li>
-				{/li}
+				{/if}
 
 				{if !empty($data.location)}
 					<li class="location">{$data.location}</li>
-				{/li}
+				{/if}
 			</ul>
 
 			<div class="main-score">
