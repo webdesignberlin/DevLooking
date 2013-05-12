@@ -23,7 +23,7 @@
                 </a>
             </div>
         {else}
-            <a class="btn-github right" href="http://localhost/Dropbox/Dev%20Looking/index.php?action=connect">Connect with github</a>
+            <a class="btn-github right" href="index.php?action=connect">Connect with github</a>
         {/if}
 
     </div>

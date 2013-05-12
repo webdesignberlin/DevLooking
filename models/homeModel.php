@@ -38,6 +38,8 @@
 
         $score = getScore($company, $public_repos, $followers, $following, $public_gists);
 
+        $score[3] = mysqli_real_escape_string($link, $score[3]);
+
         $query = 'INSERT INTO `users` VALUES ("'.$id.'","'.$login.'","'.$avatar_url.'","'.$html_url.'","'.$name.'","'.$hireable.'","'.$company.'","'.$blog.'","'.$location.'","'.$email.'","'.$bio.'","'.$score[2].'","'.$score[0].'","'.$score[1].'","'.$score[3].'")';
 
         myQueryExec($query);
@@ -69,8 +71,7 @@
 
         $score[3] = mysqli_real_escape_string($link, $score[3]);
 
-        $query = 'UPDATE `users`
-        SET id="'.$id.'", login="'.$login.'", avatar_url="'.$avatar_url.'", html_url="'.$html_url.'", name="'.$name.'", company="'.$company.'", blog="'.$blog.'", location="'.$location.'", email="'.$email.'", hireable="'.$hireable.'", bio="'.$bio.'", score="'.$score[2].'", personal_score="'.$score[0].'", repos_score="'.$score[1].'", lan="'.$score[3].'" WHERE id = "'.$id.'"';
+        $query = 'UPDATE `users` SET id="'.$id.'", login="'.$login.'", avatar_url="'.$avatar_url.'", html_url="'.$html_url.'", name="'.$name.'", company="'.$company.'", blog="'.$blog.'", location="'.$location.'", email="'.$email.'", hireable="'.$hireable.'", bio="'.$bio.'", score="'.$score[2].'", personal_score="'.$score[0].'", repos_score="'.$score[1].'", lan="'.$score[3].'" WHERE id = "'.$id.'"';
 
         myQueryExec($query);
 
@@ -85,28 +86,25 @@
         $parameters = array();
         $options = array();
 
-        $success = $client->CallAPI($url, $method, $parameters, $options, $repos);
+        $client->CallAPI($url, $method, $parameters, $options, $repos);
 
         $rs = 0;
         $lan = array();
         $resultLan = array();
 
-            var_dump($repos);
-
-
         foreach($repos as $key=>$repo){
             $ar = get_object_vars($repo);
 
-            if($ar['fork']){
-                $rs += ($ar['size'] * 2);
-                $rs += ($ar['forks_count'] * 345);
-                $rs += ($ar['watchers'] * 310);
+            if(!$ar['fork']){
+                $rs += ($ar['size'] * 1);
+                $rs += ($ar['forks_count'] * 120);
+                $rs += ($ar['watchers'] * 80);
                 $rs += ($ar['open_issues_count'] * -20);
                 if($ar['has_downloads']){
-                    $rs += 400;
+                    $rs += 200;
                 }
                 if($ar['has_wiki']){
-                    $rs += 350;
+                    $rs += 150;
                 }
             }
 
