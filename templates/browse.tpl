@@ -1,9 +1,9 @@
 <div id="content">
     <div class="grid">
             <header id="title">
-                <h2 class="left">Browse Users</h2>
+                <h2>Browse Users</h2>
 
-                <form class="" action="./index.php?action=browse" method="POST">
+                <form action="./index.php?action=browse" method="POST">
                     <select class="input-form" name="query-type" onchange='submit()'>
                         <option value="lan">Language</option>
                         <option value="personal_score">User Score</option>
