@@ -507,6 +507,14 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 			border-radius: 28px;
 }
 
+#title {
+	position: relative;
+}
+
+#title form {
+	margin: -40px 0 0 0;
+}
+
 #title form .input-form {
 	width: 20%;
 }

@@ -19,7 +19,7 @@
 				{/if}
 			</div>
 
-			{if !empty($data.email) & !empty($data.company) & !empty($data.location)}
+			{if !empty($data.email) || !empty($data.company) || !empty($data.location)}
 			<ul class="info">
 				<span class="sub-title">Few informations</span>
 				{if !empty($data.email)}
@@ -74,7 +74,7 @@
 			</div>
 
 			<div class="stat-3 user-stat">
-				<span>External Score</span>
+				<span>Contribution Score</span>
                 {$data.external_score}
 			</div>
 
