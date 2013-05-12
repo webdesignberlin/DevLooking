@@ -1,13 +1,12 @@
 <div id="content">
 	<div class="grid user">
-	
 		<section id="main-content">
 			<div class="top">
-				<img src="{$session.avatar_url}" alt="{$session.name}" class="avatar-user left">
+				<img src="{$data.avatar_url}" alt="{$data.name}" class="avatar-user left">
 
 				<div class="left">
-					<h2><a href="{$session.html_url}">{$session.name}</a></h2>
-					<span>{$session.login}</span>
+					<h2><a href="{$data.html_url}">{$data.name}</a></h2>
+					<span>{$data.login}</span>
 				</div>
 
 				{if isset($hireme)}
@@ -22,14 +21,14 @@
 
 			<ul class="info">
 				<span>Few informations</span>
-				<li class="mail">{$session.email}</li>
-				<li class="company">{$session.company}</li>
-				<li class="location">{$session.location}</li>
+				<li class="mail">{$data.email}</li>
+				<li class="company">{$data.company}</li>
+				<li class="location">{$data.location}</li>
 			</ul>
 
 			<div class="main-score">
 				<span>Score global</span>
-				6.450
+                {$data.score}
 			</div>
 
 			<div class="stat-1 user-stat">
