@@ -13,7 +13,7 @@
 
         {if isset($session) & !empty($session)}
             <div class="right">
-                <a class="account" href="">
+                <a class="account" href="index.php?action=user">
                     <img src="{$session.avatar_url}" alt="avatar">
                     Hi, {$session.login}!
                 </a>
