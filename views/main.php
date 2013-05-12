@@ -19,6 +19,9 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<script type="text/javascript" src="https://raw.github.com/scottjehl/Respond/master/respond.min.js"></script>
 	<![endif]-->
+
+    <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+
 </head>
 	
 <body>
@@ -37,8 +40,8 @@
 
 	?>
 
-	<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="./js/select2.min.js"></script>
+    <script type="text/javascript" src="./js/select2.min.js"></script>
+    <script type="text/javascript" src="./js/Chart.min.js"></script>
 
 	<script type="text/javascript" src="./js/script.js"></script>
 

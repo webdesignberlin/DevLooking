@@ -12,7 +12,7 @@ else if($action == 'connect'){//home
     $client->debug_http = 1;
     $client->server = 'github';
     $client->redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].
-        dirname(strtok($_SERVER['REQUEST_URI'],'?')).'index.php?action=connect';
+        dirname(strtok($_SERVER['REQUEST_URI'],'?')).'/index.php?action=connect';
 
     $client->client_id = 'e66e6ec9c7f680faf807';
     $application_line = __LINE__;
