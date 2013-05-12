@@ -91,10 +91,13 @@
         $lan = array();
         $resultLan = array();
 
+            var_dump($repos);
+
+
         foreach($repos as $key=>$repo){
             $ar = get_object_vars($repo);
 
-            if(!$ar['fork']){
+            if($ar['fork']){
                 $rs += ($ar['size'] * 2);
                 $rs += ($ar['forks_count'] * 345);
                 $rs += ($ar['watchers'] * 310);
@@ -116,6 +119,7 @@
 
             $lan[$key] = $ar['language'];
         }
+
 
         $languages = json_encode($resultLan);
 
