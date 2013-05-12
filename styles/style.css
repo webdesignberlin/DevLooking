@@ -199,6 +199,57 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
+/* --------------------- Cover page -------------------- */
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+
+.cover {
+	width: 100%;
+	height: 650px;
+
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#616466), to(#787c7e));
+	background-image: -webkit-linear-gradient(#616466, #787c7e);
+	background-image: -moz-linear-gradient(#616466, #787c7e);
+	background-image: -o-linear-gradient(#616466, #787c7e);
+	background-image: linear-gradient(#616466, #787c7e);
+}
+
+.cover h2 {
+	font: 700 42px/50px "Roboto Slab", sans-serif;
+	text-align: center;
+	padding-top: 80px;
+	color: #ebebeb;
+}
+
+.cover img {
+	display: block;
+	margin: auto;
+	padding-top: 80px;
+}
+
+.home h2 {
+	font: 700 42px/50px "Roboto Slab", sans-serif;
+	text-align: center;
+	padding-top: 160px;
+	color: #323738;
+}
+
+.home p {
+	color: #616466;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.home li {
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
 /* ------------------- Main content -------------------- */
 /* ----------------------------------------------------- */
 /* ----------------------------------------------------- */
@@ -234,6 +285,7 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 	margin-right: 45px;
 	margin-bottom: 45px;
 	vertical-align: top;
+	text-align: center;
 
 	-webkit-box-shadow: 0 3px 2px rgba(0, 0, 0, .15);
 	   -moz-box-shadow: 0 3px 2px rgba(0, 0, 0, .15);
@@ -293,17 +345,14 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 	font-size: 22px;
 	font-weight: 600;
 	margin: 20px 0 20px 0;
-	text-align: center;
 }
 
 #project-list > li h3 {
 	color: #323738;
 	font-size: 20px;
 	margin: 10px 0 20px 0;
-	text-align: center;
 }
 
-#project-list > li ul { margin-left: 10px; }
 #project-list > li li {
 	display: inline-block;
 	font-size: 12px;
@@ -339,7 +388,6 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 	color: #fff;
 	font-weight: 900;
 	font-size: 20px;
-	text-align: center;
 
 	-webkit-box-shadow: 0 2px #3399cc;
 	   -moz-box-shadow: 0 2px #3399cc;
@@ -507,17 +555,7 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 			border-radius: 28px;
 }
 
-#title {
-	position: relative;
-}
-
-#title form {
-	margin: -40px 0 0 0;
-}
-
-#title form .input-form {
-	width: 20%;
-}
+#title form .input-form { width: 20%; }
 
 #title input[type="submit"] {
 	width: 60px;
@@ -563,6 +601,14 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 .user .top .left { margin-left: 20px; }
 .user .top .hireme { margin-right: 20px !important; }
 
+.hireme a {
+	color: #ebebeb;
+	text-decoration: none;
+}
+
+.visited .green { background: #616466; }
+.visited a { color: #616466; }
+
 .user h2 {
 	font: 700 24px/30px "Roboto Slab", sans-serif;
 	margin-top: 35px;
@@ -575,17 +621,10 @@ sup { vertical-align: super; font-weight: normal; font-size: .875rem; }
 
 .user h2 a:hover { text-decoration: underline; }
 
-.user-browse-score h3 {
-	margin-top: 20px;
-	padding-left: 20px;
-	text-align: left !important;
-}
-
 .user-browse-score span {
 	font-size: 40px;
 	line-height: 40px;
 	font-weight: 600;
-	padding-left: 20px;
 	margin-bottom: 20px;
 }
 

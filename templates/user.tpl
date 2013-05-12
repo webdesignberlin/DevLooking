@@ -9,11 +9,11 @@
 					<span>{$data.login}</span>
 				</div>
 
-				{if isset($hireme)}
-					{if $hireme == true}
+				{if isset($data.hireable)}
+					{if $data.hireable == 1}
 						<li class="right hireme">
 							<div class="step-circle green">✓</div>
-							<p>Hire me!</p>
+							<a href="#">Hire me!</a>
 						</li>
 					{/if}
 				{/if}
