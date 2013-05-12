@@ -62,6 +62,11 @@
                 {$data.repos_score}
 			</div>
 
+			<div class="stat-3 user-stat">
+				<span>External Score</span>
+                {$data.external_score}
+			</div>
+
             <div>
                 <span>Languages Score</span>
 
