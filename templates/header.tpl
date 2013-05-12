@@ -8,7 +8,7 @@
             </ul>
         </nav>
 
-        {if isset($session) & !empty($session)}
+        {if isset($session.name) & !empty($session.name)}
             <div class="right">
                 <a class="account" href="index.php?action=user&user={$session.id}">
                     <img src="{$session.avatar_url}" alt="avatar">

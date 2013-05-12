@@ -2,7 +2,7 @@
 
 	<div class="cover">
 		<div class="grid">
-			<h2>The easiest way to find the better developers.</h2>
+			<h2>The easiest way to find the best developer.</h2>
 			<img src="images/mac-home.png" alt="">
 		</div>
 	</div>

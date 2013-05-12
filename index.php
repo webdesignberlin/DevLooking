@@ -11,16 +11,11 @@ include('./libs/oauth_client.php');
 include('./libs/http.php');
 require_once('./libs/smarty/Smarty.class.php');
 require_once('./libs/php-mailjet.class-mailjet-0.1.php');
-/*
+require_once('./libs/Mail.php');
+
+
 // Create a new Object
 $mj = new Mailjet();
-
-// Get some of your account informations
-$me = $mj->userInfos();
-
-// Display your firstname
-echo $me->infos->firstname;
-*/
 
 //Valeur d'action par defaut
 $action = $config['defaults']['action'];

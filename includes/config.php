@@ -8,7 +8,8 @@ $config['routes'] = array(
     "signout" => "home",
 	"create" => "create",
     "browse" => "browse",
-    "user" => "user"
+    "user" => "user",
+    "mail" => "mail"
 
 );
 

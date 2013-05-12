@@ -36,11 +36,36 @@
         $following = mysqli_real_escape_string($link, $user['following']);
         $public_gists = mysqli_real_escape_string($link, $user['public_gists']);
 
+        if(!empty($email)){
+            $from = "Dev Looking <webmaster@dev-looking.me>";
+            $to = "<".$email.">";
+            $subject = "Register confirmation!";
+            $body = "Thanxs for registered to dev-looking.me";
+
+            $host = "ssl://in.mailjet.com";
+            $port = "465";
+            $username = "48447089a2d9f781a9eae7295d4dbd17";
+            $password = "d76f454ea5c7a043d9ced6e6563a9bc0";
+
+            $headers = array ('From' => $from,
+                'To' => $to,
+                'Subject' => $subject);
+            $smtp = Mail::factory('smtp',
+                array ('host' => $host,
+                    'port' => $port,
+                    'auth' => true,
+                    'username' => $username,
+                    'password' => $password));
+
+            $mail = $smtp->send($to, $headers, $body);
+        }
+
         $score = getScore($company, $public_repos, $followers, $following, $public_gists);
 
         $score[3] = mysqli_real_escape_string($link, $score[3]);
 
-        $query = 'INSERT INTO `users` VALUES ("'.$id.'","'.$login.'","'.$avatar_url.'","'.$html_url.'","'.$name.'","'.$hireable.'","'.$company.'","'.$blog.'","'.$location.'","'.$email.'","'.$bio.'","'.$score[2].'","'.$score[0].'","'.$score[1].'","'.$score[3].'","'.$score[4].'")';
+        $query = 'INSERT INTO `users` (id, login, avatar_url, html_url, name, company, blog, location, email, hireable, bio, score, personal_score, repos_score, lan, external_score)
+        VALUES ("'.$id.'","'.$login.'","'.$avatar_url.'","'.$html_url.'","'.$name.'","'.$company.'","'.$blog.'","'.$location.'","'.$email.'","'.$hireable.'","'.$bio.'","'.$score[2].'","'.$score[0].'","'.$score[1].'","'.$score[3].'","'.$score[4].'")';
 
         myQueryExec($query);
 

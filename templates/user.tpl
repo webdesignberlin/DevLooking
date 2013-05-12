@@ -9,14 +9,16 @@
 					<span>{$data.login}</span>
 				</div>
 
-				{if isset($data.hireable)}
-					{if $data.hireable == 1}
-						<li class="right hireme">
-							<div class="step-circle green">✓</div>
-							<a href="#">Hire me!</a>
-						</li>
-					{/if}
-				{/if}
+                {if !empty($session.name)}
+                    {if isset($data.hireable)}
+                        {if $data.hireable == 1}
+                            <li class="right hireme">
+                                <div class="step-circle green">✓</div>
+                                <a href="#">Hire me!</a>
+                            </li>
+                        {/if}
+                    {/if}
+                {/if}
 			</div>
 
 			{if !empty($data.email) || !empty($data.company) || !empty($data.location)}

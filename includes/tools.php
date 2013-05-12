@@ -1,7 +1,7 @@
 <?php
 //-- MYSQL CONNECT --//
-//$link = mysqli_connect('mysql51-44.pro', 'eventysjdd', 'angelhack13', 'eventysjdd');//dont look my password :O
-$link = mysqli_connect('localhost', 'root', '', 'devlooking');//dont look my password :O
+$link = mysqli_connect('mysql51-44.pro', 'eventysjdd', 'angelhack13', 'eventysjdd');//dont look my password :O
+//$link = mysqli_connect('localhost', 'root', '', 'devlooking');//dont look my password :O
 mysqli_query($link, "SET NAMES 'utf8'");
 if($link == false){
     die(mysqli_connect_error());
