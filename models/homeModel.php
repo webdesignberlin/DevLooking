@@ -40,7 +40,7 @@
 
         $score[3] = mysqli_real_escape_string($link, $score[3]);
 
-        $query = 'INSERT INTO `users` VALUES ("'.$id.'","'.$login.'","'.$avatar_url.'","'.$html_url.'","'.$name.'","'.$hireable.'","'.$company.'","'.$blog.'","'.$location.'","'.$email.'","'.$bio.'","'.$score[2].'","'.$score[0].'","'.$score[1].'","'.$score[3].'")';
+        $query = 'INSERT INTO `users` VALUES ("'.$id.'","'.$login.'","'.$avatar_url.'","'.$html_url.'","'.$name.'","'.$hireable.'","'.$company.'","'.$blog.'","'.$location.'","'.$email.'","'.$bio.'","'.$score[2].'","'.$score[0].'","'.$score[1].'","'.$score[3].'","'.$score[4].'")';
 
         myQueryExec($query);
 
@@ -71,12 +71,32 @@
 
         $score[3] = mysqli_real_escape_string($link, $score[3]);
 
-        $query = 'UPDATE `users` SET id="'.$id.'", login="'.$login.'", avatar_url="'.$avatar_url.'", html_url="'.$html_url.'", name="'.$name.'", company="'.$company.'", blog="'.$blog.'", location="'.$location.'", email="'.$email.'", hireable="'.$hireable.'", bio="'.$bio.'", score="'.$score[2].'", personal_score="'.$score[0].'", repos_score="'.$score[1].'", lan="'.$score[3].'" WHERE id = "'.$id.'"';
+        $query = 'UPDATE `users` SET id="'.$id.'", login="'.$login.'", avatar_url="'.$avatar_url.'", html_url="'.$html_url.'", name="'.$name.'", company="'.$company.'", blog="'.$blog.'", location="'.$location.'", email="'.$email.'", hireable="'.$hireable.'", bio="'.$bio.'", score="'.$score[2].'", personal_score="'.$score[0].'", repos_score="'.$score[1].'", lan="'.$score[3].'", external_score="'.$score[4].'" WHERE id = "'.$id.'"';
 
         myQueryExec($query);
 
         return $score;
     }
+
+    function getExternal($path){
+        global $client;
+
+        $url = 'https://api.github.com/repos/'.$path.'/stats/commit_activity';
+        $method = 'GET';
+        $parameters = array();
+        $options = array();
+
+        $client->CallAPI($url, $method, $parameters, $options, $repos);
+
+        $tot = 0;
+
+        foreach($repos as $value){
+            $tot += $value->total;
+        }
+
+        return $tot;
+    }
+
 
     function getRepos(){
         global $client;
@@ -92,10 +112,14 @@
         $lan = array();
         $resultLan = array();
 
+        $external = 0;
+
         foreach($repos as $key=>$repo){
+
             $ar = get_object_vars($repo);
 
             if(!$ar['fork']){
+                $external += (getExternal($ar['full_name']) * 30);
                 $rs += ($ar['size'] * 1);
                 $rs += ($ar['forks_count'] * 120);
                 $rs += ($ar['watchers'] * 80);
@@ -106,6 +130,9 @@
                 if($ar['has_wiki']){
                     $rs += 150;
                 }
+            }
+            else{
+                $external += intval(((getExternal($ar['full_name'])/4) * 1.5), 10);
             }
 
             if(!in_array($ar['language'], $lan)){
@@ -118,10 +145,11 @@
             $lan[$key] = $ar['language'];
         }
 
+        $external = intval(($external * 0.8), 10);
 
         $languages = json_encode($resultLan);
 
-        $result = array($rs, $languages);
+        $result = array($rs, $languages, $external);
         return $result;
     }
 
@@ -140,7 +168,10 @@
         $score += (intval($following, 10) * 125);
         $score += (intval($public_gists, 10) * 185);
 
-        $return = array($score, $reposScore[0], $reposScore[0] + $score, $reposScore[1]);
+        $score = intval(($score * 0.8), 10);
+        $reposScore[0] = intval(($reposScore[0] * 0.8), 10);
+
+        $return = array($score, $reposScore[0], $reposScore[0] + $reposScore[2] + $score, $reposScore[1], $reposScore[2]);
 
         return $return;
 
